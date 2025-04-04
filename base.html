@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Flask Blog</a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="btn btn-dark"href="{{url_for('add_post')}} " style="padding-top: 11%;">New Post</a>
+                </li>
+                <li class="btn btn-dark btn-sm">
+                    <a class="nav-link" href="{{url_for('login')}}">Login</a>
+                </li>
+                <li class="btn btn-dark btn-sm">
+                    <a class="nav-link" href="{{url_for('register')}}">Register</a>
+                </li>
+            </ul>
+            <!-- <a href="{{ url_for('add_post') }}" class="btn btn-light">New Post</a>
+            <a href="{{ url_for('login') }}" class="btn btn-light">Login</a>
+            <a href="{{ url_for('register') }}" class="btn btn-light">Register</a> -->
+        </div>
+    </nav>
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

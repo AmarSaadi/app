@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Edit Post</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <!-- Existing fields -->
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" value="{{ post.title }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">Content</label>
+            <textarea class="form-control" name="content" rows="5" required>{{ post.content }}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Current Image: {{ post.image or 'None' }}</label>
+            <input type="file" class="form-control" name="image">
+        </div>
+        <button type="submit" class="btn btn-primary">Update Post</button>
+    </form>
+{% endblock %}  <!-- Ensure this exists -->
